@@ -4,3 +4,8 @@ export type UploadResult = {
   };
   event: "success";
 };
+
+export type SearchResult = {
+  public_id: string;
+  tags: string[];
+};
