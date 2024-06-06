@@ -20,8 +20,9 @@ async function GalleryPage() {
         <div className="grid grid-cols-4 gap-4">
           {results.resources.map((result) => (
             <CloudinaryImage
+              imageData={result}
               key={result.public_id}
-              src={result.public_id}
+              // src={result.public_id}
               publicid={result.public_id}
               favtags={result.tags}
               width="400"

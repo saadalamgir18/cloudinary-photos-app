@@ -1,4 +1,5 @@
 import FavoritList from "@/components/FavoritList";
+import { ForceRefresh } from "@/components/ForceRefresh";
 import { SearchResult } from "@/types/types";
 import cloudinary from "cloudinary";
 async function FavoritPage() {
@@ -10,11 +11,12 @@ async function FavoritPage() {
     .execute()) as { resources: SearchResult[] };
   return (
     <section>
+      <ForceRefresh />
       <div className="flex flex-col gap-8">
         <div className="flex justify-between">
           <h1 className="text-4xl font-bold">Favorits Images</h1>
         </div>
-        <FavoritList results={results} />
+        <FavoritList initialResources={results.resources} />
       </div>
     </section>
   );
